@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#DADADA"
+    android:orientation="vertical"
+    android:weightSum="10"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<GridLayout
+    android:layout_weight="2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="1"
+    android:rowCount="3"
+    android:columnOrderPreserved="false"
+    android:layout_marginTop="24dp"
+    >
+
+   <androidx.cardview.widget.CardView
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:layout_columnWeight="1"
+       android:layout_rowWeight="1"
+       android:layout_marginLeft="20dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginRight="12dp"
+       android:layout_marginBottom="10dp"
+       card_view:cardCornerRadius="8dp"
+       card_view:cardElevation="8dp"
+       card_view:cardBackgroundColor="#FFFFFF"
+       >
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           >
+
+           <TextView
+               android:id="@+id/SensorText"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Sensor Status: "
+               android:textSize="16sp"
+               android:layout_marginTop="8dp"
+               card_view:layout_constraintStart_toStartOf="@id/automanual"
+               card_view:layout_constraintTop_toTopOf="parent" />
+
+           <ToggleButton
+               android:id="@+id/automanual"
+               android:layout_width="130dp"
+               android:layout_height="48dp"
+               android:textOff=""
+               android:textOn=""
+               android:background="@drawable/custom_button"
+               card_view:layout_constraintTop_toBottomOf="@id/SensorText"
+               card_view:layout_constraintBottom_toBottomOf="parent"
+               card_view:layout_constraintStart_toStartOf="parent"
+               android:layout_marginLeft="16dp"
+               />
+
+           <TextView
+               android:id="@+id/SensorTypeText"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Sensor Type: "
+               android:textSize="16sp"
+               android:layout_marginTop="8dp"
+               card_view:layout_constraintStart_toStartOf="@id/OnOff"
+               card_view:layout_constraintTop_toTopOf="parent" />
+
+           <ToggleButton
+               android:id="@+id/OnOff"
+               android:layout_width="130dp"
+               android:layout_height="48dp"
+               android:textOff=""
+               android:textOn=""
+               android:background="@drawable/custom_on_off"
+               card_view:layout_constraintTop_toBottomOf="@id/SensorTypeText"
+               card_view:layout_constraintBottom_toBottomOf="parent"
+               card_view:layout_constraintEnd_toEndOf="parent"
+               android:layout_marginRight="16dp"
+               />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.cardview.widget.CardView>
+
+</GridLayout>
+
+    <GridLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:columnOrderPreserved="false"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            card_view:cardBackgroundColor="#FFFFFF"
+        >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/soilMoisture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soil Moisture"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/soilMoistureValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="32sp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toBottomOf="@id/soilMoisture" />
+
+                <ImageView
+                    android:id="@+id/soilhumidityImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/soil_moisture"
+                    card_view:layout_constraintTop_toBottomOf="@id/soilMoistureValue"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="16dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            card_view:cardBackgroundColor="#FFFFFF"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/soilTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soil Temperature"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/soilTemperatureValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="32sp"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toBottomOf="@id/soilTemperature" />
+
+                <ImageView
+                    android:id="@+id/soilTemperatureImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/soil_temperature"
+                    card_view:layout_constraintTop_toBottomOf="@id/soilTemperatureValue"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="16dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="1"
+        android:rowCount="3"
+        android:columnOrderPreserved="false"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            card_view:cardBackgroundColor="#FFFFFF"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/weatherHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weather Humidity"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/weatherHumidityValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="48sp"
+                    card_view:layout_constraintStart_toStartOf="@+id/weatherHumidity"
+                    card_view:layout_constraintTop_toBottomOf="@id/weatherHumidity" />
+
+                <ImageView
+                    android:id="@+id/weatherHumidityImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="148dp"
+                    android:src="@drawable/weather_humidity"
+                    card_view:layout_constraintTop_toTopOf="parent"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@id/weatherHumidityValue"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</LinearLayout>
